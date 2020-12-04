@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/component_category_item_tv_category"
+    android:layout_width="wrap_content"
+    android:layout_height="40dp"
+    android:minWidth="140dp"
+    android:layout_marginRight="12dp"
+    android:text="Most Popular"
+    android:textSize="14dp"
+    android:textColor="@color/black"
+    android:fontFamily="@font/rubik_regular"
+    android:gravity="center"
+    android:background="@drawable/ic_cat_bg"/>

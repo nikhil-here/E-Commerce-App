@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/activity_main_tv_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Hello, Rachel!"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/rubik_regular"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="1dp"/>
+
+    <TextView
+        android:id="@+id/activity_main_tv_tagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Lets find your favourate body care product"
+        android:textSize="10dp"
+        android:textColor="@android:color/background_dark"
+        android:fontFamily="@font/rubik_regular"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_tv_username"
+        android:translationZ="1dp"/>
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginRight="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/activity_main_tv_username"
+        app:layout_constraintBottom_toBottomOf="@id/activity_main_tv_tagline"
+        android:src="@drawable/profile"/>
+
+    <ImageView
+        android:id="@+id/activity_main_iv_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_margin="16dp"
+        app:layout_constraintLeft_toRightOf="@id/activity_main_cl_category_container"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_tv_tagline"
+        android:src="@drawable/ic_filter"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_main_rv_product_category"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="12dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/component_category_item"
+        tools:itemCount="6"
+        app:layout_constraintLeft_toRightOf="@+id/activity_main_iv_filter"
+        app:layout_constraintTop_toTopOf="@id/activity_main_iv_filter"
+        app:layout_constraintBottom_toBottomOf="@id/activity_main_iv_filter"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activity_main_rv_products"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        tools:listitem="@layout/component_product_item"
+        app:layout_constraintLeft_toRightOf="@id/activity_main_cl_category_container"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_main_rv_product_category"
+        app:layout_constraintBottom_toTopOf="@id/activity_main_btn_cart"/>
+
+
+    <Button
+        android:id="@+id/activity_main_btn_cart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/cart_btn_bg"
+        android:drawableRight="@drawable/ic_cart"
+        android:fontFamily="@font/rubik_regular"
+        android:paddingHorizontal="20dp"
+        android:text="Your Cart is empty"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintLeft_toRightOf="@id/activity_main_cl_category_container"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_main_cl_category_container"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:background="#F5F5F5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/activity_main_iv_fragrance"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="center"
+            android:rotation="-90"
+            android:text="Fragrance"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/activity_main_iv_body"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/activity_main_iv_body"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="center"
+            android:rotation="-90"
+            android:text="Body"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/activity_main_iv_face"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_main_iv_fragrance" />
+
+        <TextView
+            android:id="@+id/activity_main_iv_face"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="center"
+            android:rotation="-90"
+            android:text="Face"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/activity_main_iv_hairs"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_main_iv_body" />
+
+
+        <TextView
+            android:id="@+id/activity_main_iv_hairs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fontFamily="@font/rubik_regular"
+            android:gravity="center"
+            android:rotation="-90"
+            android:text="Hairs"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toTopOf="@id/activity_main_iv_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activity_main_iv_face" />
+
+
+        <ImageView
+            android:id="@+id/activity_main_iv_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
